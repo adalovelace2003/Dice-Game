@@ -91,5 +91,20 @@
     font-size: 15px;
   }
 
-  
-  
+
+  .modal-close-btn-cross {
+    position: absolute;
+    right: 25%;
+    color: white;
+    font-size: 15px;
+    top: 20%;
+    border: 2px solid white;
+    padding: 3px 10px;
+    border-radius: 50%;
+    font-weight: 900;
+  }
+
+  .modal-close-btn-cross:hover{
+    color: black;
+    background: white;
+  }

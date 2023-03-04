@@ -15,6 +15,8 @@ const showModalBtn = document.getElementById("show-modal-btn");
 const showModalBtn2 = document.querySelector(".question-mark");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const modalCloseBtn2 = document.getElementById("modal-close-btn2");
+const modalCloseBtnCross1 = document.querySelector("#modal-close-btn-cross-1");
+const modalCloseBtnCross2 = document.querySelector("#modal-close-btn-cross-2");
 
 let scores = [0, 0];
 let currentScore = 0;
@@ -23,7 +25,6 @@ let playing = true;
 
 score0El.textContent = 0;
 score1El.textContent = 0;
-// diceEl.classList.add("hidden");
 
 document.querySelector(".btn--roll").addEventListener("click", function () {
   if (playing) {
@@ -136,15 +137,32 @@ btnNew.addEventListener("click", function () {
   player0El.classList.add("player--active");
 });
 
-
 showModalBtn2.addEventListener("click", () => {
   // modal2.style.display = "fixed";
-  console.log("clicked");
-  document.querySelector(".modal2").classList.toggle("hidden")
-
+  // console.log("clicked");
+  document.querySelector(".modal2").classList.remove("hidden");
 });
 
+modalCloseBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  console.log("CLICKED CLOSE BTN");
+  document.querySelector(".modal2").classList.add("hidden");
+  document.querySelector(".modal").classList.add("hidden");
+});
 
 modalCloseBtn2.addEventListener("click", () => {
-  document.querySelector(".modal2").classList.toggle("hidden")
+  document.querySelector(".modal2").classList.add("hidden");
+  document.querySelector(".modal").classList.add("hidden");
+});
+
+modalCloseBtnCross1.addEventListener("click", () => {
+  console.log("clicked Cross 1");
+  document.querySelector(".modal").style.display = "none";
+  document.querySelector(".modal2").classList.add("hidden");
+});
+
+modalCloseBtnCross2.addEventListener("click", () => {
+  console.log("clicked Cross");
+  document.querySelector(".modal").classList.add("hidden");
+  document.querySelector(".modal2").classList.add("hidden");
 });
